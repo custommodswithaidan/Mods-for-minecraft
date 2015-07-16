@@ -1,0 +1,19 @@
+package idtech.John.customaxe;
+
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemAxe;
+
+import com.example.examplemod.ExampleMod;
+
+public class CustomAxe extends ItemAxe {
+	
+	public final String name = "CustomAxe";
+	
+	public CustomAxe(ToolMaterial material) {
+		super(material);
+		this.setUnlocalizedName(ExampleMod.MODID + "_" + name);
+		this.setCreativeTab(CreativeTabs.tabTools);
+		// TODO Auto-generated constructor stub
+	}
+
+}
