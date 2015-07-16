@@ -1,0 +1,30 @@
+package idtech.John.customitem;
+
+import idtech.John.customaxe.CustomAxe;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+
+import com.example.examplemod.ExampleMod;
+
+public class ItemManager {
+	public static CustomItem myItem;
+	public static CustomAxe customAxe;
+	
+	public static void mainRegistry()
+	{
+		initalizeItem();
+		registerItem();
+	}
+
+	private static void registerItem() {
+		GameRegistry.registerItem(customAxe, customAxe.name);
+		GameRegistry.registerItem(myItem,myItem.name);
+		
+	}
+
+	private static void initalizeItem() {
+		customAxe = new CustomAxe(ExampleMod.customAxeMaterial);
+		myItem = new CustomItem();
+		
+	}
+	
+}
