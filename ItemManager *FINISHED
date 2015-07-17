@@ -1,0 +1,45 @@
+public class ItemManager {
+	public static CustomItem myItem;
+	public static CustomSword customSword;
+	public static CustomPickaxe customPickaxe;
+	public static CustomShovel customSpade;
+	public static CustomAxe customAxe;
+	public static CustomArmor customHelm;
+	public static CustomArmor customChest;
+	public static CustomArmor customLegs;
+	public static CustomArmor customBoots;
+	public static CustomHoe customHoe;
+	
+	public static void mainRegistry()
+	{
+		initializeItem();
+		registerItem();
+	}
+	public static void registerItem()
+	{
+		GameRegistry.registerItem(customHelm, customHelm.name);
+		GameRegistry.registerItem(customLegs, customLegs.name);
+		GameRegistry.registerItem(customChest, customChest.name);
+		GameRegistry.registerItem(customBoots, customBoots.name);
+		GameRegistry.registerItem(customAxe, customAxe.name);
+		GameRegistry.registerItem(customSpade, customSpade.name);
+		GameRegistry.registerItem(customPickaxe, customPickaxe.name);
+		GameRegistry.registerItem(myItem, myItem.name);
+		GameRegistry.registerItem(customSword, customSword.name);
+		GameRegistry.registerItem(customHoe, customHoe.name);
+		
+	}
+	public static void initializeItem()
+	{
+		customHelm = new CustomArmor(ExampleMod.customArmorMaterial, 0, 0, "CustomHelm");
+		customChest = new CustomArmor(ExampleMod.customArmorMaterial, 0, 1, "CustomChest");
+		customLegs = new CustomArmor(ExampleMod.customArmorMaterial, 0, 2, "CustomLegs");
+		customBoots = new CustomArmor(ExampleMod.customArmorMaterial, 0, 3, "CustomBoots");
+		customHoe = new CustomHoe(ExampleMod.customHoeMaterial);
+		customSpade = new CustomShovel(ExampleMod.customShovelMaterial);
+		customAxe = new CustomAxe(ExampleMod.customAxeMaterial);
+		customPickaxe = new CustomPickaxe(ExampleMod.customPickaxeMaterial);
+		customSword = new CustomSword(ExampleMod.customToolMaterial);
+		myItem = new CustomItem();
+	}
+}
