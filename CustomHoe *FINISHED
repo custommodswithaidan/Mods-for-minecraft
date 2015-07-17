@@ -1,0 +1,9 @@
+	public final String name = "CustomHoe";
+	
+	public CustomHoe(ToolMaterial material) {
+		super(material);
+		this.setUnlocalizedName(ExampleMod.MODID + "_" + name );
+		this.setCreativeTab(CreativeTabs.tabTools);
+		//TODO Auto-generated constructor stub
+		
+	}
