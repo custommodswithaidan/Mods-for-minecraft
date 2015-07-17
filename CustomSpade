@@ -1,0 +1,9 @@
+public class CustomShovel extends ItemSpade{
+	public final String name = "CustomSpade";
+
+	public CustomShovel(ToolMaterial material) {
+		super(material);
+		this.setUnlocalizedName(ExampleMod.MODID + "_" + name);
+		this.setCreativeTab(CreativeTabs.tabTools);
+		// TODO Auto-generated constructor stub
+	}
