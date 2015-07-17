@@ -1,0 +1,29 @@
+import net.minecraft.item.Item.ToolMaterial;
+import net.minecraftforge.fml.common.registry.GameRegistry;
+import CustomHoe.CustomHoe;
+
+public class ItemManager {
+	public static CustomItem myItem;
+	public static CustomHoe customHoe;
+	
+	public static void mainRegistry()
+	{
+		initializeItem();
+		registerItem();
+	}
+
+	private static void registerItem() 
+	{
+
+		GameRegistry.registerItem(customHoe, customHoe.name);
+		GameRegistry.registerItem(myItem,myItem.name);
+		}
+
+	private static void initializeItem() 
+	{	
+		customHoe = new CustomHoe(ToolMaterial.IRON);
+		myItem = new CustomItem();
+
+	}
+	
+}
