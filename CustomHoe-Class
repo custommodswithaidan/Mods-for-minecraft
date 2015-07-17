@@ -1,0 +1,18 @@
+import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.item.ItemHoe;
+
+import com.example.examplemod.ExampleMod;
+
+public class CustomHoe extends ItemHoe{
+	
+	public final String name = "CustomHoe";
+	
+	public CustomHoe(ToolMaterial material) {
+		super(material);
+		this.setUnlocalizedName(ExampleMod.MODID + "_" + name );
+		this.setCreativeTab(CreativeTabs.tabTools);
+		//TODO Auto-generated constructor stub
+		
+	}
+
+}
