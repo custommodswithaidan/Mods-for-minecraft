@@ -1,0 +1,41 @@
+ public static final String MODID = "examplemod";
+    public static final String VERSION = "1.0";  
+    public static ToolMaterial customToolMaterial;
+    public static ToolMaterial customPickaxeMaterial;
+    public static ToolMaterial customShovelMaterial;
+    public static ToolMaterial customAxeMaterial;
+    public static ArmorMaterial customArmorMaterial;
+    public static ToolMaterial customHoeMaterial;
+    @EventHandler
+    public void preinit(FMLPreInitializationEvent event){
+    	customArmorMaterial = EnumHelper.addArmorMaterial("CUSTOM",  "custom", 99999999, new int[] {20, 20 , 20 , 20 }, 10);
+    	customShovelMaterial = EnumHelper.addToolMaterial("CustomShovel", 1, 99999999, 100, 0, 10);
+    	customToolMaterial = EnumHelper.addToolMaterial("Custom", 0, 99999999, 0, 50, 10);
+    	customPickaxeMaterial = EnumHelper.addToolMaterial("CustomPickaxe", 3, 99999999, 100, 30, 10);
+    	customAxeMaterial = EnumHelper.addToolMaterial("CustomAxe", 1, 99999999, 100, 35, 10);
+    	customHoeMaterial = EnumHelper.addToolMaterial("CustomHoe", 1, 99999999, 100, 35, 10);
+    	ItemManager.mainRegistry();
+    	
+    }
+    @EventHandler
+    public void init(FMLInitializationEvent event)
+    {
+    	GameRegistry.addShapedRecipe(new ItemStack(ItemManager.customSword),  "xy", "yx", 'x', Blocks.cobblestone, 'y', Blocks.gravel);
+    	GameRegistry.addShapedRecipe(new ItemStack(ItemManager.customSword),  "yx", "yx", 'x', Blocks.cobblestone, 'y', Blocks.gravel);
+    	if(event.getSide() == Side.CLIENT)
+    	{
+	    	RenderItem renderItem= Minecraft.getMinecraft().getRenderItem();
+	    	renderItem.getItemModelMesher().register(ItemManager.myItem, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.myItem.name, "inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customSword, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customSword.name, "inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customPickaxe, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customPickaxe.name, "inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customSpade, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customSpade.name, "inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customAxe, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customAxe.name,"inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customHelm, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customHelm.name, "inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customChest, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customChest.name, "inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customLegs, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customLegs.name, "inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customHoe, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customHoe.name, "inventory"));
+	    	renderItem.getItemModelMesher().register(ItemManager.customBoots, 0, new ModelResourceLocation(this.MODID + ":" + ItemManager.customBoots.name, "inventory"));
+    	}
+		// some example code
+        System.out.println("DIRT BLOCK >> "+Blocks.dirt.getUnlocalizedName());
+    }
